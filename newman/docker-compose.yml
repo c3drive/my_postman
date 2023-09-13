@@ -1,0 +1,13 @@
+version: '3'
+services:
+  newman:
+    image: postman/newman:latest
+    #build: .
+    container_name: newman
+    volumes:
+    # Mount host collections folder ~/collections, onto /etc/newman on the docker image
+    - ~/collections:/etc/newman
+    # Keep bash running in interactive mode for Permanently running container
+    # command: ls /etc/shells 
+    tty: true          #-t ttyを割り当てます。
+    stdin_open: true   #-i STDINを開きます。
