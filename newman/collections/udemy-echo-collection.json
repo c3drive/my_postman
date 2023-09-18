@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "",
+		"name": "Echo CRUD",
+		"description": "### Intro\n\nFollow along with this GitHub: **[https://github.com/c3drive/my_tools/tree/main/newman]()**.\n\n* The [Echo CRUD API Documentaion](https://github.com/c3drive/my_web_scraping/tree/main/api_server/go-rest-api)\n* The [Udemy course](https://www.udemy.com/course/echo-go-react-restapi/).\n\n### Get Started\n\n[Update the environment](https://github.com/c3drive/my_tools/tree/main/newman/environments/udemy-echo-dev-environment) with your own authorization credentials.\n\n| Required Environment Variables | Description  |\n|------------------------|-------------|\n| `host_name` | request host. |\n| `xxx` | xxx. |\n| `xxxxx` | xxx. |\n| `xxx` | xxx. |\n| `xxx` | xxx. |\n\n### Run the collection\n\nThis operational collection register. \n\n* **Controlling your workflow:** xxxxx.\n* **Saving state:xxxxxxx.\n\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": {
+						"email": "user2@test.com",
+						"password": "dummypw"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host_name}}/signup",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Create a new user.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Csrf",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://{{host_name}}/csrf",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					]
+				},
+				"description": "View csrf.\n\n"
+			},
+			"response": []
+		}
+	]
+}
