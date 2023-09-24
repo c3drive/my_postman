@@ -14,8 +14,8 @@
 				"body": {
 					"mode": "raw",
 					"raw": {
-						"email": "user2@test.com",
-						"password": "dummypw"
+						"email": "{{email}}",
+						"password": "{{password}}"
 					},
 					"options": {
 						"raw": {
@@ -38,17 +38,184 @@
 			"response": []
 		},
 		{
-			"name": "Csrf",
+			"name": "Login",
 			"request": {
-				"method": "GET",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": {
+						"email": "{{email}}",
+						"password": "{{password}}"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://{{host_name}}/csrf",
+					"raw": "http://{{host_name}}/login",
 					"protocol": "http",
 					"host": [
 						"{{host_name}}"
+					],
+					"path": [
+						"login"
 					]
 				},
-				"description": "View csrf.\n\n"
+				"description": "Set cookie.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": {
+						"email": "{{email}}",
+						"password": "{{password}}"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host_name}}/logout",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"logout"
+					]
+				},
+				"description": "Destroy Cookie.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host_name}}/tasks",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"tasks"
+					]
+				},
+				"description": "Get All Tasks.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host_name}}/tasks/{{task_id}}",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"tasks",
+						"{{task_id}}"
+					]
+				},
+				"description": "Get A Task.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": {
+						"title": "{{title}}"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host_name}}/tasks",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"tasks"
+					]
+				},
+				"description": "Create A Task.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": {
+						"title": "{{update_title}}"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host_name}}/tasks/{{task_id}}",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"tasks",
+						"{{task_id}}"
+					]
+				},
+				"description": "Update A Task.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{host_name}}/tasks/{{task_id}}",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"tasks",
+						"{{task_id}}"
+					]
+				},
+				"description": "Delete A Task.\n\n"
 			},
 			"response": []
 		}

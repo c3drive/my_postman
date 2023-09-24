@@ -5,6 +5,31 @@
 			"key": "host_name",
 			"value": "go-rest-api:8080",
 			"enabled": true
+		},
+		{
+			"key": "email",
+			"value": "user1@test.com",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "dummypw",
+			"enabled": true
+		},
+		{
+			"key": "title",
+			"value": "hello",
+			"enabled": true
+		},
+		{
+			"key": "update_title",
+			"value": "updated",
+			"enabled": true
+		},
+		{
+			"key": "task_id",
+			"value": "2",
+			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment"
