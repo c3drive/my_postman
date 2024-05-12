@@ -1,7 +1,8 @@
 # refer: https://github.com/postmanlabs/newman/blob/develop/docker/images/ubuntu/Dockerfile
 FROM ubuntu:latest
 
-ARG NODE_MAJOR=16
+ARG NODE_MAJOR=21
+# fixed docker issue ARG NODE_MAJOR=16
 # ARG NEWMAN_VERSION
 # # Bail out early if NEWMAN_VERSION is not provided
 # RUN if [ ! $(echo $NEWMAN_VERSION | grep -oE "^[0-9]+\.[0-9]+\.[0-9]+$") ]; then \
@@ -22,10 +23,11 @@ RUN apt-get update; \
 
     # Run Update and Install
     apt-get update; \
-    apt-get install nodejs -y; \
+    apt-get install nodejs -y;
 
     # Install Newman globally
-    npm install --global newman@${NEWMAN_VERSION};
+    # Install newman-reporter-csv globally
+RUN npm install --global newman@${NEWMAN_VERSION} newman-reporter-csv;
 
 # Set environment variables
 ENV LC_ALL="en_US.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"

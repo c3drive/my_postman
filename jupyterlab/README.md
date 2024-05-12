@@ -5,7 +5,7 @@ containerにインストールしたjupyter-notebookを使う方法をまとめ�
 ## Mount host folder ~/mounted_folder/sample, onto /work on the docker image
 1. 以下のコマンドを実行する
 ```
-mkdir ./mounted_folder/sample
+mkdir -p ./mounted_folder/sample
 docker build -f ./Dockerfile . -t miharasatsuki/jupyter-notebook
 docker run -p 8888:8888 -v ./mounted_folder/sample/:/work --name my-lab miharasatsuki/jupyter-notebook
 ```

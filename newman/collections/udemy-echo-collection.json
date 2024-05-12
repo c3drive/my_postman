@@ -41,7 +41,12 @@
 			"name": "Login",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [            {
+					"key": "X-CSRF-Token",
+					"value": "WmywpBCcDabC9TZvg6DC6U1ZPvY4Oc9M",
+					"system": true
+				  }
+				],
 				"body": {
 					"mode": "raw",
 					"raw": {
@@ -216,6 +221,25 @@
 					]
 				},
 				"description": "Delete A Task.\n\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get CSRF",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host_name}}/csrf",
+					"protocol": "http",
+					"host": [
+						"{{host_name}}"
+					],
+					"path": [
+						"csrf"
+					]
+				},
+				"description": "Get A CSRF Token.\n\n"
 			},
 			"response": []
 		}
