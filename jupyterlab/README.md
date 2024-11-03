@@ -5,9 +5,9 @@ containerにインストールしたjupyter-notebookを使う方法をまとめ�
 ## Mount host folder ~/mounted_folder/sample, onto /work on the docker image
 1. 以下のコマンドを実行する
 ```
-mkdir -p ./mounted_folder/sample
+mkdir -p ./mounted_folder/udemy
 docker build -f ./Dockerfile . -t miharasatsuki/jupyter-notebook
-docker run -p 8888:8888 -v ./mounted_folder/sample/:/work --name my-lab miharasatsuki/jupyter-notebook
+docker run -p 8888:8888 -v ~/work/docker/my_tools/jupyterlab/mounted_folder/udemy/:/work --name my-lab miharasatsuki/jupyter-notebook
 ```
 2. ブラウザからlocalhost:8888でアクセスする。
 ブラウザ上にworkフォルダができているのでそこにファイルを作成するとhost側に作成されている。
